@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+
+  body {
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: #0047ab;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  header p {
+    font-size: 14px;
+  }
+
+  footer {
+    background-color: #0047ab;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 20px auto;
+  }
+
+  h1 {
+    text-align: center;
+    color: #0047ab;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+
+  .actions button {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .actions button:first-child {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .actions button:first-child:hover {
+    background-color: #3e8e41;
+  }
+
+  .actions button:last-child {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .actions button:last-child:hover {
+    background-color: #d32f2f;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0047ab;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #003580;
+  }
+
+  .transaction-history {
+    margin-top: 20px;
+  }
+
+  .transaction-history h3 {
+    font-size: 18px;
+    color: #0047ab;
+    margin-bottom: 10px;
+  }
+
+  .transaction-history ul {
+    list-style-type: none;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0;
+  }
+
+  .transaction-history ul li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
