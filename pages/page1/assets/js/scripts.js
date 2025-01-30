@@ -79,7 +79,7 @@ function saveUserData() {
 function logout() {
     localStorage.removeItem("currentUser");
     alert("Logged out successfully!");
-    window.location.href = "/index.html";
+    window.location.href = "../../../../index.html";
 }
 
 document.getElementById("depositButton").addEventListener("click", deposit);
