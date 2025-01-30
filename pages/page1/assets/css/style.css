@@ -15,24 +15,36 @@
   }
 
   header {
-    background-color: #0047ab;
+    background-color: #ffffff;
     color: white;
-    padding: 20px;
     text-align: center;
+    position: relative;
   }
 
-  header h1 {
-    font-size: 24px;
-    font-weight: bold;
-  }
+  .company-logo {
+    height: 150px;
+}
+.button-container {
+  position: absolute; /* Positions the button container relative to the header */
+  right: 20px; /* Adjust as needed for spacing */
+  top: 20px; /* Aligns with the header padding */
+}
 
-  header p {
-    font-size: 14px;
-  }
+.button_home {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button_home:hover {
+    background-color: #b3b3b3;
+}
 
   footer {
-    background-color: #0047ab;
-    color: white;
+    background-color: #ffffff;
     text-align: center;
     padding: 10px;
     margin-top: auto;
@@ -40,6 +52,7 @@
 
   footer p {
     font-size: 14px;
+    color: rgb(0, 0, 0);
   }
 
   .container {

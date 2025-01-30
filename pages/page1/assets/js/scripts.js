@@ -18,7 +18,7 @@ loadUserData();
 
 if (!currentUser || !currentUser.name || currentUser.name === "Guest") {
     alert("You need to log in first.");
-    window.location.href = "login.html";
+    window.location.href = "../../../../index.html";
 } else {
     document.getElementById("userName").innerText = currentUser.name;
     document.getElementById("balance").innerText = currentUser.balance;
@@ -76,12 +76,6 @@ function saveUserData() {
     localStorage.setItem("currentUser", JSON.stringify(currentUser));
 }
 
-function logout() {
-    localStorage.removeItem("currentUser");
-    alert("Logged out successfully!");
-    window.location.href = "../../../../../index.html";
-}
 
 document.getElementById("depositButton").addEventListener("click", deposit);
 document.getElementById("withdrawButton").addEventListener("click", withdraw);
-document.getElementById("logoutButton").addEventListener("click", logout);
