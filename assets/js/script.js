@@ -21,7 +21,7 @@ function login() {
 
   localStorage.setItem("currentUser", JSON.stringify(user));
 
-  window.location.href = "../../pages/page1/index.html";
+  window.location.href = "./pages/page1";
 }
 
 document.getElementById("loginButton").addEventListener("click", login);
