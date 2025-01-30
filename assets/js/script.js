@@ -19,11 +19,9 @@ function login() {
       return;
   }
 
-  // Store user data in localStorage
   localStorage.setItem("currentUser", JSON.stringify(user));
 
   window.location.href = "../../pages/page1/index.html";
 }
 
-// Add an event listener to the login button
 document.getElementById("loginButton").addEventListener("click", login);

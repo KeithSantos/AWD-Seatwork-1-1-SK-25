@@ -92,7 +92,7 @@ Guiding Question:
 7. File Structure to follow below.
 
 ```
-WD-ProjectName
+AWD-SEATWORKk-1-1-SK-25
 └─ assets
 |   └─ css
 |   |   └─ style.css

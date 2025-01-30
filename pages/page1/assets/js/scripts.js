@@ -1,27 +1,24 @@
 let currentUser = null;
 
-// Load user data from localStorage if available
 function loadUserData() {
     const storedUser = localStorage.getItem("currentUser");
     if (storedUser) {
         currentUser = JSON.parse(storedUser);
     } else {
         currentUser = {
-            name: "Guest", // Default name if not logged in
+            name: "Guest",
             balance: 0,
-            history: [] // Initialize history
+            history: []
         };
-        saveUserData(); // Save the default user to localStorage
+        saveUserData();
     }
 }
 
-// Call loadUserData when the script runs to check for existing user session
 loadUserData();
 
-// Check if user is logged in
 if (!currentUser || !currentUser.name || currentUser.name === "Guest") {
     alert("You need to log in first.");
-    window.location.href = "login.html"; // Redirect to login page
+    window.location.href = "login.html";
 } else {
     document.getElementById("userName").innerText = currentUser.name;
     document.getElementById("balance").innerText = currentUser.balance;
@@ -85,7 +82,6 @@ function logout() {
     window.location.href = "/index.html";
 }
 
-// Add event listeners for deposit and withdraw buttons
 document.getElementById("depositButton").addEventListener("click", deposit);
 document.getElementById("withdrawButton").addEventListener("click", withdraw);
 document.getElementById("logoutButton").addEventListener("click", logout);
