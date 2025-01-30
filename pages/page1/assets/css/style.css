@@ -6,7 +6,8 @@
   }
 
   body {
-    background-color: #f4f4f4;
+    background: url(../img/bankbgpage1.jpg) no-repeat center center;
+    background-size: cover;
     color: #333;
     display: flex;
     flex-direction: column;
