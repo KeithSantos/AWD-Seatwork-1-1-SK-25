@@ -21,7 +21,7 @@ function login() {
 
   localStorage.setItem("currentUser", JSON.stringify(user));
 
-  window.location.href = "./pages/page1";
+  window.location.href = "./AWD-Seatwork-1-1-SK-25/pages/page1";
 }
 
 document.getElementById("loginButton").addEventListener("click", login);
