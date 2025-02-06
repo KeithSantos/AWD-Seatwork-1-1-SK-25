@@ -6,7 +6,7 @@
 <div align="center">
   <a href="https://github.com/keithsantos/">
   <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assets/img/keithlogo.jpg" alt="Nyebe" width="130" height="100">
+    <img src="./assets/img/logo1.png" alt="Logo" width="130" height="100">
   </a>
 <!-- TODO: Change Title to the name of the title of your Project -->
   <h3 align="center">AWD-1-1-SK-25</h3>
