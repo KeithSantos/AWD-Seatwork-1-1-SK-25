@@ -3,33 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bank Account</title>
+  <title>Your Account</title>
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/img/" />
+
 </head>
 <body>
-    <header>
-        <div class="button-container">
-          <a href="../../index.html" class="button_home">Log Out</a>
-      </div>
-      <img src="./assets/img/logo1.png" class="company-logo" alt="Company Logo">
-    </header>
-  <div id="accountPage" class="container">
-    <h1>Welcome, <span id="userName"></span>!</h1>
-    <div class="account-info">
-      <h2>Balance: ₱<span id="balance">5000</span></h2>
+  <header>
+    <div class="button-container">
+      <a href="../../index.html" class="button_home" id="logOutButton" style="display:none;">Log Out</a>
     </div>
-    <div class="actions">
-      <button onclick="deposit()">Deposit</button>
-      <button onclick="withdraw()">Withdraw</button>
-    </div>
-    <div class="transaction-history">
-      <h3>Transaction History</h3>
-      <ul id="historyList"></ul>
+    <img src="./assets/img/logo1.png" class="company-logo" alt="Company Logo">
+  </header>
+
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="logIn()">Login</button>
     </div>
   </div>
+
+  <div class="container" style="display:none;" id="mainContent">
+    <h1>Welcome</h1>
+    <div class="balance-info">
+      <h2>Your Balance: <span id="balanceAmount">₱0.00</span></h2>
+    </div>
+    <div class="transaction-container">
+      <h3>Transactions</h3>
+      <ul id="transactionList"></ul>
+    </div>
+
+    <div class="form-container">
+      <h3>Deposit</h3>
+      <input type="number" id="depositAmount" placeholder="Amount" />
+      <button class="action-button" onclick="deposit()">Deposit</button>
+
+      <h3>Withdraw</h3>
+      <input type="number" id="withdrawAmount" placeholder="Amount" />
+      <button class="action-button" onclick="withdraw()">Withdraw</button>
+    </div>
+  </div>
+
   <footer>
     <p>&copy; 2025 Keith's Banking. All rights reserved.</p>
   </footer>
+
   <script src="./assets/js/scripts.js"></script>
 </body>
 </html>

@@ -1,81 +1,97 @@
-let currentUser = null;
+let balance = parseFloat(localStorage.getItem('balance')) || 5000;
+const transactionList = JSON.parse(localStorage.getItem('transactions')) || [];
+const validUsername = "Keith";
+const validPassword = "Keith1";
 
-function loadUserData() {
-    const storedUser = localStorage.getItem("currentUser");
-    if (storedUser) {
-        currentUser = JSON.parse(storedUser);
-    } else {
-        currentUser = {
-            name: "Guest",
-            balance: 0,
-            history: []
-        };
-        saveUserData();
-    }
-}
+const MAX_BALANCE = 1000000;
+const MIN_WITHDRAW = 500;
+const MIN_DEPOSIT = 100;
+const MAINTAINING_BALANCE = 500;
 
-loadUserData();
-
-if (!currentUser || !currentUser.name || currentUser.name === "Guest") {
-    alert("You need to log in first.");
-    window.location.href = "../../../../index.html";
-} else {
-    document.getElementById("userName").innerText = currentUser.name;
-    document.getElementById("balance").innerText = currentUser.balance;
-    updateHistory();
+function updateBalance() {
+  document.getElementById('balanceAmount').innerText = `₱${balance.toFixed(2)}`;
+  localStorage.setItem('balance', balance);
 }
 
 function deposit() {
-    const amount = prompt("Enter deposit amount (Max: ₱1,000,000):");
-    const deposit = parseFloat(amount);
-
-    if (isNaN(deposit) || deposit <= 0 || deposit > 1000000) {
-        alert("Invalid deposit amount.");
-        return;
+  const amount = parseFloat(document.getElementById('depositAmount').value);
+  if (!isNaN(amount) && amount >= MIN_DEPOSIT) {
+    if (balance + amount <= MAX_BALANCE) {
+      balance += amount;
+      transactionList.push(`Deposited: ₱${amount.toFixed(2)}`);
+      updateTransactionList();
+      updateBalance();
+      document.getElementById('depositAmount').value = '';
+      localStorage.setItem('transactions', JSON.stringify(transactionList));
+    } else {
+      alert("Cannot exceed maximum balance of ₱1,000,000.");
     }
-
-    currentUser.balance += deposit;
-    currentUser.history.push(`Deposited: ₱${deposit}`);
-    document.getElementById("balance").innerText = currentUser.balance;
-    updateHistory();
-    saveUserData();
+  } else {
+    alert("Minimum deposit amount is ₱100.");
+  }
 }
 
 function withdraw() {
-    const amount = prompt("Enter withdrawal amount (Max: ₱100,000):");
-    const withdrawal = parseFloat(amount);
-
-    if (isNaN(withdrawal) || withdrawal <= 0 || withdrawal > 100000) {
-        alert("Invalid withdrawal amount.");
-        return;
+  const amount = parseFloat(document.getElementById('withdrawAmount').value);
+  if (!isNaN(amount) && amount >= MIN_WITHDRAW) {
+    if (balance - amount >= MAINTAINING_BALANCE) {
+      balance -= amount;
+      transactionList.push(`Withdrew: ₱${amount.toFixed(2)}`);
+      updateTransactionList();
+      updateBalance();
+      document.getElementById('withdrawAmount').value = '';
+      localStorage.setItem('transactions', JSON.stringify(transactionList));
+    } else {
+      alert("Insufficient balance. You must maintain a minimum balance of ₱500.");
     }
+  } else {
+    alert("Minimum withdrawal amount is ₱500.");
+  }
+}
 
-    if (withdrawal > currentUser.balance) {
-        alert("Insufficient balance.");
-        return;
+function updateTransactionList() {
+  const transactionListElement = document.getElementById('transactionList');
+  transactionListElement.innerHTML = '';
+  transactionList.forEach(transaction => {
+    const li = document.createElement('li');
+    li.innerText = transaction;
+    transactionListElement.appendChild(li);
+  });
+}
+
+function showLogOutButton() {
+  const logOutButton = document.getElementById('logOutButton');
+  logOutButton.style.display = 'block';
+}
+
+function logIn() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if (username === validUsername && password === validPassword) {
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('mainContent').style.display = 'block';
+    showLogOutButton();
+  } else {
+    alert("Invalid credentials. Please try again.");
+  }
+}
+
+updateBalance();
+updateTransactionList();
+
+window.onload = function() {
+  document.getElementById('loginModal').style.display = 'block';
+
+  document.getElementById('username').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      logIn();
     }
+  });
 
-    currentUser.balance -= withdrawal;
-    currentUser.history.push(`Withdrew: ₱${withdrawal}`);
-    document.getElementById("balance").innerText = currentUser.balance;
-    updateHistory();
-    saveUserData();
-}
-
-function updateHistory() {
-    const historyList = document.getElementById("historyList");
-    historyList.innerHTML = "";
-    currentUser.history.forEach((entry) => {
-        const li = document.createElement("li");
-        li.innerText = entry;
-        historyList.appendChild(li);
-    });
-}
-
-function saveUserData() {
-    localStorage.setItem("currentUser", JSON.stringify(currentUser));
-}
-
-
-document.getElementById("depositButton").addEventListener("click", deposit);
-document.getElementById("withdrawButton").addEventListener("click", withdraw);
+  document.getElementById('password').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      logIn();
+    }
+  });
+};

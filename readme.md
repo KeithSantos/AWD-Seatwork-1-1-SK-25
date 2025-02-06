@@ -70,9 +70,7 @@ Guiding Question:
 ### Key Components
 <!-- TODO: List of Key Components -->
 <!-- The following are just sample -->
-- MultiPage Website/Single Page Website
-- Parallax transition
-- Transactional
+- MultiPage Website
 
 ### Technology
 <!-- TODO: List of Technology Used -->
@@ -98,9 +96,8 @@ AWD-SEATWORKk-1-1-SK-25
 |   |   └─ style.css
 |   └─ img
 |   |   └─ bankbg1.jpg
-|   |   └─ keithlogo.jpg
-|   └─ js
-|       └─ script.js
+|   |   └─ logo1.png
+|   |   └─ logo1.ico
 └─ pages
 |  └─ page1
 |     └─ assets
@@ -108,6 +105,8 @@ AWD-SEATWORKk-1-1-SK-25
 |     |  |  └─ style.css
 |     |  └─ img
 |     |  |  └─ bankbgpage1.jpg
+|     |  |  └─ logo1.jpg
+|     |  |  └─ logo1.ico
 |     |  └─ js
 |     |     └─ script.js
 |     └─ index.html
@@ -119,5 +118,5 @@ AWD-SEATWORKk-1-1-SK-25
 
 <!-- TODO: Add References -->
 | Title | Purpose | Link |
-
-| Google | for images and design samples | google.com |
+| Google | For images and design samples | google.com |
+| Google Fonts | Fonts i used | fonts.google.com |

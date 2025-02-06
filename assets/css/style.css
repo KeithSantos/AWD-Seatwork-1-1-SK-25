@@ -1,29 +1,75 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-  body {
-    background: url(../img/bankbg1.jpg) no-repeat center center;
-    background-size: cover;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", serif;
 }
 
-  header {
-    background-color: #ffffff;
-    text-align: center;
-  }
-  .company-logo {
-    height: 150px;
+body {
+  background: url(../img/bankbg1.jpg) no-repeat center center;
+  background-size: cover;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.company-logo {
+  height: 120px;
+}
+
+.INFO {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 50px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+.INFO h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.INFO p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.buttons .btn {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.buttons .btn:hover {
+  background-color: #0056b3;
 }
 
 footer {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
   padding: 10px;
   margin-top: auto;
@@ -33,81 +79,3 @@ footer p {
   font-size: 14px;
   color: rgb(0, 0, 0);
 }
-
-  .container {
-    width: 100%;
-    max-width: 400px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin: 20px auto;
-  }
-
-  h1 {
-    text-align: center;
-    color: #0047ab;
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-  }
-
-  .btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #0047ab;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    transition: background-color 0.3s ease;
-  }
-
-  .btn:hover {
-    background-color: #003580;
-  }
-
-  .switch-link {
-    text-align: center;
-    margin-top: 15px;
-  }
-
-  .switch-link a {
-    text-decoration: none;
-    color: #0047ab;
-    font-size: 14px;
-  }
-
-  .switch-link a:hover {
-    text-decoration: underline;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .visible {
-    display: block;
-  }
